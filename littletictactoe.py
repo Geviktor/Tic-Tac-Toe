@@ -4,9 +4,9 @@ from random import randint
 
 #Take one list and print it 3 row and 3 colm
 def printBoard(board):
-   for i in range(len(board)):
-        print("    " + board[i][0] +"  "+ board[i][1] +"  "+ board[i][2])
-        print("")
+    for i in range(len(board)):
+        print("    " + "|_" + board[i][0] + "_|_" + board[i][1] + "_|_" + board[i][2] + "_|")
+    print("")
 
 # If x's and o's are crosswise or straight, return False else return True.
 def gameOver(board,draw):
