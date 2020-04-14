@@ -2,13 +2,11 @@
 from os import system
 from random import randint
 
-
 #Take one list and print it 3 row and 3 colm
 def printBoard(board):
    for i in range(len(board)):
         print("    " + board[i][0] +"  "+ board[i][1] +"  "+ board[i][2])
         print("")
-
 
 # If x's and o's are crosswise or straight, return False else return True.
 def gameOver(board,draw):
@@ -25,7 +23,6 @@ def gameOver(board,draw):
         return False
     else:
         return True
-
 
 #If the ~'s over return True, else return False
 def drawChecker(board):
@@ -67,7 +64,6 @@ def checkStraight(board,symbol,control,c1):
             return board, control
     return False, False
 
-
 #check board cross for computer play
 def checkCross(board,symbol,control,c1):
     if board[0][0] == c1 and board[1][1] == c1 and board[2][2] == "~":
@@ -97,7 +93,6 @@ def checkCross(board,symbol,control,c1):
     else:
         return False, False
  
-
 #Main function for player. control rows, colms, fix game and play it.
 def playerPlay(board,row,colm,symbol,control):
     if row > 2 or  colm > 2 or row < 0 or colm < 0:
@@ -108,7 +103,6 @@ def playerPlay(board,row,colm,symbol,control):
         board[row][colm] = symbol
         control += 1
     return board, control
-
 
 #Main function for computer
 def compPlay(board,symbol,control):
@@ -150,7 +144,6 @@ def compPlay(board,symbol,control):
                         control += 1
                         return board, control
 
-
 #For two people
 def multiPlayer(): 
     board = []
@@ -183,8 +176,6 @@ def multiPlayer():
         input("GAME OVER! DRAW! Press Enter.")
     else:
         input(f"GAME OVER! WINNER IS {symbol}! Press Enter.")
-
-
 
 #For play with computer
 def singlePlayer():
@@ -220,7 +211,6 @@ def singlePlayer():
         input("GAME OVER! DRAW! Press Enter.")
     else:
         input(f"GAME OVER! WINNER IS {symbol}! Press Enter.")
-
 
 #The main function
 def main():
